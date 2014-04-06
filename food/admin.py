@@ -11,6 +11,8 @@ class DishAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,               {'fields': ['name']}),
         ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
+        ('Servers how many people', {'fields': ['persons']}),
+        ('Image link or url', {'fields': ['url']}),
     ]
     inlines = [ChoiceInline]
     list_display = ('name', 'pub_date')

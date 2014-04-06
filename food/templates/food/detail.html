@@ -1,7 +1,19 @@
-<h1>{{ dish.name }}</h1>
+{% include "food/test.html" %}
+{% load staticfiles %}
 
-<ul>
-{% for ingredient in dish.ingredient_set.all %}
-    <li>{{ ingredient.ingredient }} {{ ingredient.amount }} </li>
-{% endfor %}
-</ul>
+<link rel="stylesheet" type="text/css" href="{% static 'food/style.css' %}" />
+<div id='container'>
+
+	<div id='header'> 
+		<h1>{{ dish.name }}  {{dish.persons}} Personen</h1>
+		{% if dish.url != None %}
+			<img src="/static/food/images/{{ dish.url }}" width="200" height="200">
+		{% endif %}
+	</div>
+	<div id = 'content'>	
+		<h3>Ingredienten:</h3>
+		{% for ingredient in dish.ingredient_set.all %}
+			<li>{{ ingredient.ingredient }} {{ ingredient.amount }} {{ ingredient.unit }} </li>
+		{% endfor %}
+	</div>
+</div>

@@ -11,7 +11,7 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         """Return all dishes"""
-        return Dish.objects.order_by('-pub_date')[:5]
+        return Dish.objects.order_by('name')[:5]
 
 class DetailView(generic.DetailView):
     model = Dish

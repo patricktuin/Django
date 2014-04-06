@@ -1,0 +1,29 @@
+body{
+	background-color: #EFF2FB;
+}
+
+#container{
+	width:1024px;
+	margin:auto;
+	background-color: lightblue;
+
+}
+
+#header{
+	#background-color: red;
+	padding: 10px;
+}
+
+#content{
+	#background-color: red;
+	padding: 10px;
+}
+
+img{
+	float: right;
+}
+
+/*TABLE PROPERTIES*/
+li{
+	list-style-type: none;
+}
