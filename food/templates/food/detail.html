@@ -1,0 +1,7 @@
+<h1>{{ dish.name }}</h1>
+
+<ul>
+{% for ingredient in dish.ingredient_set.all %}
+    <li>{{ ingredient.ingredient }} {{ ingredient.amount }} </li>
+{% endfor %}
+</ul>

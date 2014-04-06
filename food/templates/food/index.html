@@ -1,0 +1,11 @@
+<h1>Food index</h1>
+
+{% if dish_list %}
+    <ul>
+    {% for dish in dish_list %}
+        <li><a href="{% url 'food:detail' dish.id %}">{{ dish.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Geen gerechten beschikbaar.</p>
+{% endif %}
