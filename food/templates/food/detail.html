@@ -6,14 +6,23 @@
 
 	<div id='header'> 
 		<h1>{{ dish.name }}  {{dish.persons}} Personen</h1>
-		{% if dish.url != None %}
-			<img src="/static/food/images/{{ dish.url }}" width="200" height="200">
-		{% endif %}
 	</div>
-	<div id = 'content'>	
-		<h3>Ingredienten:</h3>
+	<div id ='content-left'>
+		{{ dish.preparation|safe }}
+	</div>
+	<div id = 'content-right'>
+		{% if dish.url != None %}
+			<img src="/static/food/images/{{ dish.url }}" width="250" height="250">	
+		{% endif %}
+		<table style="width:250px">
+		<th>Ingredienten</th>
 		{% for ingredient in dish.ingredient_set.all %}
-			<li>{{ ingredient.ingredient }} {{ ingredient.amount }} {{ ingredient.unit }} </li>
+			<tr>
+				<td>{{ ingredient.ingredient }}</td> 
+				<td>{{ ingredient.amount }}</td> 
+				<td>{{ ingredient.unit }}</td> 
+			</tr>
 		{% endfor %}
+		</table>
 	</div>
 </div>

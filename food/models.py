@@ -6,6 +6,7 @@ class Dish(models.Model):
     pub_date = models.DateTimeField('date published')
     persons = models.IntegerField()
     url = models.CharField(max_length=30)
+    preparation = models.TextField()
     def __unicode__(self):  # Python 3: def __str__(self):
         return self.name
 

@@ -1,9 +1,9 @@
 body{
-	background-color: #EFF2FB;
+	background-color: #EBEBFF;
 }
 
 #container{
-	width:1024px;
+	width:1000px;
 	margin:auto;
 	background-color: lightblue;
 
@@ -11,12 +11,20 @@ body{
 
 #header{
 	#background-color: red;
-	padding: 10px;
 }
 
-#content{
-	#background-color: red;
-	padding: 10px;
+#content-left{
+	#background-color: orange;
+	height: 200px;
+	width: 750px;
+	float:left;
+
+}
+
+#content-right{
+	#background-color: blue;
+	width: 250px;
+	float:right;
 }
 
 img{
@@ -24,6 +32,12 @@ img{
 }
 
 /*TABLE PROPERTIES*/
+
+
 li{
 	list-style-type: none;
+}
+
+th{
+	text-align: left;
 }

@@ -13,6 +13,7 @@ class DishAdmin(admin.ModelAdmin):
         ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
         ('Servers how many people', {'fields': ['persons']}),
         ('Image link or url', {'fields': ['url']}),
+        ('Preparation', {'fields': ['preparation']}),
     ]
     inlines = [ChoiceInline]
     list_display = ('name', 'pub_date')
