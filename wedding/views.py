@@ -1,18 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.views import generic
+from django.template import RequestContext, loader
 # Create your views here.
 from wedding.models import Invitee, Invitee_extra
 
-class IndexView(generic.ListView):
-    template_name = 'wedding/index.html'
-    context_object_name = 'invitee_list'
+def index(request):
+    party_list = Invitee.objects.all().order_by('-party_name')[:5]
+    context = {'party_list': party_list}
+    return render(request, 'wedding/index.html', context)
 
-    def get_queryset(self):
-        """Return all Invitee's"""
-        return Invitee.objects.order_by('party_name')
-
-class DetailView(generic.DetailView):
-    model = Invitee
-    template_name = 'wedding/detail.html'
+def detail(request, invitee_id):
+    question = get_object_or_404(Invitee, pk=invitee_id)
+    return render(request, 'wedding/detail.html', {'party_name': party_name})

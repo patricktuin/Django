@@ -9,11 +9,11 @@ class ChoiceInline(admin.TabularInline):
 
 class WeddingAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None,               {'fields': ['invitee']}),
+        (None,               {'fields': ['party_name']}),
     ]
     inlines = [ChoiceInline]
-    list_display = ('invitee', 'pub_date')
-    list_filter = ['pub_date']
-    search_fields = ['invitee']
+    list_display = ('party_name', 'created_at', 'updated_at')
+    list_filter = ['created_at']
+    search_fields = ['party_name']
 
 admin.site.register(Invitee, WeddingAdmin)

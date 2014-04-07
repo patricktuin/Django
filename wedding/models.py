@@ -2,15 +2,16 @@ from django.db import models
 
 # Create your models here.
 class Invitee(models.Model):
-    invitee = models.CharField(max_length=50)
-    attend = models.BooleanField(default=False)
-    pub_date = models.DateTimeField('date published')
+    party_name = models.CharField(max_length=50)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     def __unicode__(self):  # Python 3: def __str__(self):
-        return self.name
+        return self.party_name
 
 class Invitee_extra(models.Model):
     invitee = models.ForeignKey(Invitee)
-    invitee_extra = models.CharField(max_length=50)
+    guest = models.CharField(max_length=50)
+    attend = models.BooleanField(default=False)
     def __unicode__(self):  # Python 3: def __str__(self):
-        return self.ingredient
+        return self.invitee
 
