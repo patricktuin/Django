@@ -1,1 +1,10 @@
-{{ invitee.id }}
+g<h1>{{ j }}</h1>
+ 
+<form action="{% url 'wedding:index' poll.id %}" method="post">
+{% csrf_token %}
+{% for guest in guests %}
+    <input type="checkbox" name="choice" id="choice{{ forloop.counter }}" value="{{ guest.id }}" />
+    <label for="choice"> {{ guest.guest }} </label><br />
+{% endfor %}
+<input type="submit" value="Verstuur" />
+</form>
