@@ -1,10 +1,12 @@
-g<h1>{{ j }}</h1>
- 
-<form action="{% url 'wedding:index' poll.id %}" method="post">
+<h1>name: {{ invitee.party_name }} id: {{ invitee.id }} </h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'wedding:vote' invitee.id %}" method="post">
 {% csrf_token %}
-{% for guest in guests %}
-    <input type="checkbox" name="choice" id="choice{{ forloop.counter }}" value="{{ guest.id }}" />
-    <label for="choice"> {{ guest.guest }} </label><br />
+{% for guests in invitee.invitee_extra_set.all %}
+    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+    <label for="choice{{ forloop.counter }}">{{ guests.guest }}</label><br />
 {% endfor %}
-<input type="submit" value="Verstuur" />
+<input type="submit" value="Update gegevens" />
 </form>

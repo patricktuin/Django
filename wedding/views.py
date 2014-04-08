@@ -15,10 +15,27 @@ class IndexView(generic.ListView):
         return Invitee.objects.all().order_by('-party_name')[:5]
 
 class DetailView(generic.DetailView):
-    model = Invitee_extra
+    model = Invitee
     template_name = 'wedding/detail.html'
 
-def results(request, invitee_id):
-    party_list = Invitee.objects.all().order_by('-party_name')[:5]
-    context = {'party_list': party_list}
-    return render(request, 'wedding/index.html', context)
+class ResultsView(generic.DetailView):
+    model = Invitee
+    template_name = 'wedding/results.html'
+
+def vote(request, invitee_id):
+    p = get_object_or_404(Invitee, pk=invitee_id)
+    try:
+        selected_choice = p.invitee_extra_set.get(pk=request.POST['choice'])
+    except (KeyError, Invitee_extra.DoesNotExist):
+        # Redisplay the poll voting form.
+        return render(request, 'wedding/detail.html', {
+            'wedding': p,
+            'error_message': "You didn't select a attendance.",
+        })
+    else:
+        selected_choice.attend += 1
+        selected_choice.save()
+        # Always return an HttpResponseRedirect after successfully dealing
+        # with POST data. This prevents data from being posted twice if a
+        # user hits the Back button.
+        return HttpResponseRedirect(reverse('details:results', args=(p.id,)))

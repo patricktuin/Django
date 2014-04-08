@@ -11,7 +11,6 @@ class Invitee(models.Model):
 class Invitee_extra(models.Model):
     invitee = models.ForeignKey(Invitee)
     guest = models.CharField(max_length=50)
-    attend = models.BooleanField(default=False)
+    attend = models.IntegerField(default=0)
     def __unicode__(self):  # Python 3: def __str__(self):
         return self.invitee
-
