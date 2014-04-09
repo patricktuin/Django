@@ -3,6 +3,16 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'food/style.css' %}" />
 
+
+<body>
+    <form action="/food/search/" method="get">
+        <input type="text" name="q">
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
+
+
 <div id='container'>
 	<div id = 'header'>
 	<h1>Alle gerechten</h1>

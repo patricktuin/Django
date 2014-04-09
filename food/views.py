@@ -16,3 +16,15 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Dish
     template_name = 'food/detail.html'
+
+class SearchView(generic.ListView):
+    model = Dish
+    template_name = 'food/search.html'
+
+#Work in progress!!!!!!
+def search(request):
+    if 'q' in request.GET:
+        message = 'You searched for: %r' % request.GET['q']
+    else:
+        message = 'You submitted an empty form.'
+    return HttpResponse(message)
