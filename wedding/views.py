@@ -25,17 +25,17 @@ class ResultsView(generic.DetailView):
 def vote(request, invitee_id):
     p = get_object_or_404(Invitee, pk=invitee_id)
     try:
-        selected_choice = p.invitee_extra_set.get(pk=request.POST['choice'])
-    except (KeyError, Invitee_extra.DoesNotExist):
+        selected_choice = p.invitee_extra_set.get(pk=request.POST['attend'])
+    except (KeyError, Invitee.DoesNotExist):
         # Redisplay the poll voting form.
         return render(request, 'wedding/detail.html', {
-            'wedding': p,
-            'error_message': "You didn't select a attendance.",
+            'poll': p,
+            'error_message': "You didn't select a choice.",
         })
     else:
-        selected_choice.attend += 1
+        selected_choice.attend =1 #+= 1
         selected_choice.save()
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
-        return HttpResponseRedirect(reverse('details:results', args=(p.id,)))
+        return HttpResponseRedirect(reverse('wedding:results', args=(p.id,)))

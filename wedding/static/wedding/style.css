@@ -1,0 +1,13 @@
+h1 {
+    
+}
+
+body {
+    background-color:#F3E7E7;
+}
+
+#container{
+	margin:auto;
+	#background-color: red;
+	width:800px;
+}

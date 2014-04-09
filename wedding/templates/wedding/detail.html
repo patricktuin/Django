@@ -1,12 +1,30 @@
-<h1>name: {{ invitee.party_name }} id: {{ invitee.id }} </h1>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'wedding/style.css' %}" />
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<div id='container'>
 
-<form action="{% url 'wedding:vote' invitee.id %}" method="post">
-{% csrf_token %}
-{% for guests in invitee.invitee_extra_set.all %}
-    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-    <label for="choice{{ forloop.counter }}">{{ guests.guest }}</label><br />
-{% endfor %}
-<input type="submit" value="Update gegevens" />
-</form>
+	<h1>name: {{ invitee.party_name }} id: {{ invitee.id }} </h1>
+
+	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+	<form action="{% url 'wedding:vote' invitee.id %}" method="post">
+
+	{% csrf_token %}
+	<table>
+		<th>Guest id</th>
+		<th>Guest</th>
+		<th>Attend</th>
+	{% for guests in invitee.invitee_extra_set.all %}
+		<tr>
+			<td><label for="attend{{ forloop.counter }}"> {{ guests.id }}</label></td>
+			<td><label for="attend{{ forloop.counter }}"> {{ guests.guest }}</label></td>
+			<td><input type="radio" name="attend" id="attend{{ forloop.counter }}" value="{{ invitee_extra.id }}"/></td>
+		<tr>
+	{% endfor %}
+	</table>
+
+
+	<input type="submit" value="Update gegevens" />
+	</form>
+
+</div>

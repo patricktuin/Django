@@ -1,6 +1,14 @@
-<h1>Invitee List</h1>
-<table>
-{% for party in party_list %}
-	<li><a href="/wedding/{{party.id}}/"> {{ party.party_name }} </a></li>
-{% endfor %}
-</table>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'wedding/style.css' %}" />
+
+<html>
+<div id='container'>
+
+	<h1>Invitee List</h1>
+	<table>
+	{% for party in party_list %}
+		<h3><a href="{% url 'wedding:detail' party.id %}"> {{ party.party_name }} </a></h3>
+	{% endfor %}
+	</table>
+</div>
+</html>
