@@ -2,8 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.views import generic
+from django.core import serializers
 # Create your views here.
 from food.models import Dish, Ingredient
+import json
 
 class IndexView(generic.ListView):
     template_name = 'food/index.html'
@@ -28,3 +30,9 @@ def search(request):
     else:
         message = 'You submitted an empty form.'
     return HttpResponse(message)
+
+def myjson(request):
+    data = Dish.objects.only('name')
+    #data = {'string':'test', 'twee':'pollo'}
+    data = serializers.serialize('json', data)
+    return HttpResponse(data)

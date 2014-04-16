@@ -2,5 +2,13 @@
 <link rel="stylesheet" type="text/css" href="{% static 'wedding/style.css' %}" />
 
 <div id='container'>
-	<h1>results page for  </h1>
+	<h1>{{ invitee.party_name }}</h1>
+
+<ul>
+{% for guests in invitee.invitee_extra_set.all %}
+    <li>{{ guests.guest }} -- {{ guests.attend }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'wedding:vote' invitee_id=invitee.id %}">Vote again?</a>
 </div>
