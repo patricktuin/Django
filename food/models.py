@@ -2,6 +2,7 @@ from django.db import models
 
 class Dish(models.Model):
     name = models.CharField(max_length=50)
+    type_dish = models.CharField(max_length=50)
     description = models.CharField(max_length=250)
     pub_date = models.DateTimeField('date published')
     persons = models.IntegerField()

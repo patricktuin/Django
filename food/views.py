@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.views import generic
 from django.core import serializers
+
 # Create your views here.
 from food.models import Dish, Ingredient
 import json
@@ -25,14 +26,17 @@ class SearchView(generic.ListView):
 
 #Work in progress!!!!!!
 def search(request):
-    if 'q' in request.GET:
-        message = 'You searched for: %r' % request.GET['q']
+    search = request.GET['q']
+    if search != '':
+        message = Dish.objects.filter(name__contains=search)
+        #message = 'You searched for: %s' %request.GET['q']
     else:
         message = 'You submitted an empty form.'
     return HttpResponse(message)
 
 def myjson(request):
-    data = Dish.objects.only('name')
+    data = Dish.objects.all()
     #data = {'string':'test', 'twee':'pollo'}
-    data = serializers.serialize('json', data)
-    return HttpResponse(data)
+    #data = serializers.serialize('json', data)
+    data = json.dumps( [{'name': o.name, 'description': o.description, 'persons': o.persons} for o in data])
+    return HttpResponse(json.dumps(data),mimetype="application/json")

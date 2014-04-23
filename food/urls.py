@@ -7,5 +7,4 @@ urlpatterns = patterns('',
     url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'),
     (r'^search/$', views.search),
     (r'^myjson/$', views.myjson),
-    #url(r'^search/$', views.search),
 )

@@ -1,21 +1,29 @@
-{% include "food/test.html" %}
+<div id='container'>
+{% include "food/navbar.html" %}
 {% load staticfiles %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'food/style.css' %}" />
-<div id='container'>
 
 	<div id='header'> 
 		<h1>{{ dish.name }}  {{dish.persons}} Personen</h1>
 	</div>
-	<div id ='content-left'>
-		{{ dish.preparation|safe }}
-	</div>
-	<div id = 'content-right'>
+
+	<div id='content-left'>
 		{% if dish.url != None %}
 			<img src="/static/food/images/{{ dish.url }}" width="250" height="250">	
 		{% endif %}
-		<table style="width:250px">
+	</div>
+
+
+	<div id ='content-right'>
+		<table class="table table-striped">	
 		<th>Ingredienten</th>
+		<th></th>
+		<th></th>
 		{% for ingredient in dish.ingredient_set.all %}
 			<tr>
 				<td>{{ ingredient.ingredient }}</td> 
@@ -25,4 +33,17 @@
 		{% endfor %}
 		</table>
 	</div>
+
+	<div id='panel'>
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Bereiding</h3>
+		  </div>
+		  <div class="panel-body">
+		    {{ dish.preparation }}
+		  </div>
+		</div>
+	</div>
+
+
 </div>

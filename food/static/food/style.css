@@ -1,43 +1,26 @@
-body{
-	background-color: #EBEBFF;
-}
-
 #container{
-	width:1000px;
 	margin:auto;
-	background-color: lightblue;
-
-}
-
-#header{
-	#background-color: red;
+	width: 800px;
 }
 
 #content-left{
-	#background-color: orange;
-	height: 200px;
-	width: 750px;
+	margin-top:40px;
 	float:left;
-
+	vertical-align: left;
+	width:350px;
 }
 
 #content-right{
-	#background-color: blue;
-	width: 250px;
-	float:right;
-}
-
-img{
+	margin-top:40px;
 	float: right;
+	width:400px;
+	vertical-align: right;
+
 }
 
-/*TABLE PROPERTIES*/
+#panel{
+	margin-top: 40px;
+	float:right;
+	width:800px;
 
-
-li{
-	list-style-type: none;
-}
-
-th{
-	text-align: left;
 }

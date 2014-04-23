@@ -11,8 +11,10 @@ class DishAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,               {'fields': ['name']}),
         ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
+        ('Type Gerecht', {'fields': ['type_dish']}),
         ('Servers how many people', {'fields': ['persons']}),
         ('Image link or url', {'fields': ['url']}),
+        ('Description', {'fields': ['description']}),
         ('Preparation', {'fields': ['preparation']}),
     ]
     inlines = [ChoiceInline]
