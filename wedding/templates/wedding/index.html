@@ -1,14 +1,88 @@
 {% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'wedding/style.css' %}" />
+{% load bootstrap3 %}
+{% bootstrap_css %}
 
-<html>
-<div id='container'>
 
-	<h1>Invitee List</h1>
-	<table>
-	{% for party in party_list %}
-		<h3><a href="{% url 'wedding:detail' party.id %}"> {{ party.party_name }} </a></h3>
-	{% endfor %}
-	</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>De Bruiloft</title>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script type="text/javascript" src="{% static 'javascript/jquery-1.11.0.min.js' %}"></script>
+	<!-- Wedding stylesheet -->
+	<link rel="stylesheet" type="text/css" href="{% static 'wedding/style.css' %}" />
+</head>
+<body>
+<!--Navigation-->
+{% include "wedding/navbar.html" %}
+
+<!--Jumbotron-->
+<div class="container">
+  <div class="row">
+    <div class="jumbotron">
+      <div class="text-center">
+        <h1>31 oktober 2014</h1>
+        <p>Welkom op de bruiloft van Patrick & Mariska</p>
+      </div>
+    </div>
+  </div>
 </div>
-</html>
+
+<!--Grid system-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-3">
+      <h3><a href="#">Test colums</a></h3>
+      <p>Een test stukje van een site over bootstrap enzo dat soort dingen etc</p>
+      <a href="#" class="btn btn-default">Read More</a>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <h3><a href="#">Test colums</a></h3>
+      <p>Een test stukje van een site over bootstrap enzo dat soort dingen etc</p>
+      <a href="#" class="btn btn-default">Read More</a>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <h3><a href="#">Test colums</a></h3>
+      <p>Een test stukje van een site over bootstrap enzo dat soort dingen etc</p>
+      <a href="#" class="btn btn-default">Read More</a>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <h3><a href="#">Test colums</a></h3>
+      <p>Een test stukje van een site over bootstrap enzo dat soort dingen etc</p>
+      <a href="#" class="btn btn-default">Read More</a>
+    </div>
+  </div>
+</div>
+
+<!--Test met images-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+    <div class="thumbnail">
+      <img src="http://upload.wikimedia.org/wikipedia/commons/b/b7/De_Zwarte_Boer_Leuvenum.jpg" alt="...">
+      <div class="caption">
+        <h3>De Zwarte Boer</h3>
+        <p>In het pittoreske Leuvenem ligt midden in de bossen het kleinste 4 sterren hotel van Nederland.</p>
+        <p><a href="pages/wedding/location" class="btn btn-primary" role="button" btn-pull-right>Button</a>
+      </div>
+    </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="thumbnail">
+        <img src="http://www.tent-direct.nl/Verhuur/Bier/Brand.gif" alt="...">
+        <div class="caption">
+          <h3>Thumbnail label</h3>
+          <p>Een klein testje met verschillende plaatjes</p>
+          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+{% bootstrap_javascript %}

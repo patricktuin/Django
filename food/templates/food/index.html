@@ -1,10 +1,14 @@
-<div id='container'>
+<div class="container">
 {% include "food/navbar.html" %}
 {% load staticfiles %}
 {% load bootstrap3 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 {% bootstrap_messages %}
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
 <link rel="stylesheet" type="text/css" href="{% static 'food/style.css' %}" />
 <link rel="stylesheet" href="http:/netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -13,8 +17,6 @@
     <form action="/food/myjson/" method="get">
         <input type="submit" value="Json">
     </form>
-
-
 
 	<h1>Alle gerechten</h1>
 

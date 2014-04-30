@@ -1,4 +1,4 @@
-#container{
+.container{
 	margin:auto;
 	width: 800px;
 }
@@ -23,4 +23,9 @@
 	float:right;
 	width:800px;
 
+}
+
+body{
+	background-color: green ;
+	padding:90px;
 }

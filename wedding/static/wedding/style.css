@@ -1,13 +1,50 @@
-h1 {
-    
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../assets/glyphicons-halflings-regular.eot');
+  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
+       url('../assets/glyphicons-halflings-regular.woff') format('woff'), 
+       url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), 
+       url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
-body {
-    background-color:#F3E7E7;
+body{
+	padding-top: 70px;
 }
 
-#container{
-	margin:auto;
-	#background-color: red;
-	width:800px;
+.row{
+	margin-bottom: 30px;
+}
+
+.table-striped{
+	margin-top: 25px;
+}
+
+.table-striped:hover{
+	text-decoration: none;
+}
+
+.jumbotron{
+  	margin-bottom: 0px;
+  	height: 350px;
+  	color: white;
+  	background-image: url('images/champagne.jpg');
+  	background-size:1200px 600px;
+  	background-position: 0px;
+  	border-style: solid;
+  	border-width:1px;
+  	border-color: lightgrey;
+}
+
+.jumbotron h1{
+	font-size:50px !important;
+  	text-shadow: grey 1px 1px 5px;
+  	color:black !important;
+}
+
+.jumbotron p{
+
+  	text-shadow: grey 1px 1px 5px;
+  	color:black;
+  	font-size: 40px !important;
+
 }
