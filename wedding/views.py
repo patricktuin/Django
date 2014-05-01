@@ -33,3 +33,5 @@ class GuestsView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Invitee
     template_name = 'wedding/detail.html'
+
+    
