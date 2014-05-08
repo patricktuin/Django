@@ -7,31 +7,47 @@ from django.template import RequestContext, loader
 from wedding.models import Invitee, Invitee_extra
 
 class IndexView(generic.ListView):
+    model = Invitee
     template_name = 'wedding/index.html'
-    context_object_name = 'party_list'
 
-    def get_queryset(self):
-        """Return the party names"""
-        return Invitee.objects.all().order_by('-party_name')[:5]
 
 class LocationView(generic.ListView):
+    model = Invitee
     template_name = 'wedding/location.html'
-    context_object_name = 'party_list'
 
-    def get_queryset(self):
-        """Return the party names"""
-        return Invitee.objects.all().order_by('-party_name')[:5]
+class CeremoniemeesterView(generic.ListView):
+    model = Invitee
+    template_name = 'wedding/ceremoniemeester.html'
+
+class FotosView(generic.ListView):
+    model = Invitee
+    template_name = 'wedding/fotos.html'
+
+class OvernachtenView(generic.ListView):
+    model = Invitee
+    template_name = 'wedding/overnachten.html'
+
+class KadotipsView(generic.ListView):
+    model = Invitee
+    template_name = 'wedding/kadotips.html'
+
 
 class GuestsView(generic.ListView):
     template_name = 'wedding/guests.html'
-    context_object_name = 'party_list'
+    context_object_name = 'guest_list'
 
     def get_queryset(self):
-        """Return the party names"""
+        """Return the guests names"""
         return Invitee.objects.all().order_by('-party_name')[:5]
 
-class DetailView(generic.DetailView):
-    model = Invitee
-    template_name = 'wedding/detail.html'
 
-    
+class DetailView(generic.DetailView):
+    template_name = 'wedding/detail.html'
+    context_object_name = 'guest_list'
+
+    def get_queryset(self):
+        """Return the guests names"""
+        return Invitee.objects.all().order_by('-party_name')[:5]
+
+
+

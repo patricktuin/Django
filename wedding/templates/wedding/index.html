@@ -7,7 +7,6 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>De Bruiloft</title>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -21,50 +20,40 @@
 
 <!--Jumbotron-->
 <div class="container">
-  <div class="row">
-    <div class="jumbotron">
-      <div class="text-center">
-        <h1>31 oktober 2014</h1>
-        <p>Welkom op de bruiloft van Patrick & Mariska</p>
-      </div>
-    </div>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+<div class="item active">
+  <img src="http://www.crystalclassics.com/images/sw_jewelry_banner.jpg" alt="...">
+  <div class="carousel-caption">
+    <h3>Bruiloft</h3>
+    <p>...</p>
   </div>
 </div>
 
 
-<!--Grid system
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-md-3">
-      <h3><a href="#">Test colums</a></h3>
-      <p>Een test stukje van een site over bootstrap enzo dat soort dingen etc</p>
-      <a href="#" class="btn btn-default">Read More</a>
-    </div>
-    <div class="col-sm-6 col-md-3">
-      <h3><a href="#">Test colums</a></h3>
-      <p>Een test stukje van een site over bootstrap enzo dat soort dingen etc</p>
-      <a href="#" class="btn btn-default">Read More</a>
-    </div>
-    <div class="col-sm-6 col-md-3">
-      <h3><a href="#">Test colums</a></h3>
-      <p>Een test stukje van een site over bootstrap enzo dat soort dingen etc</p>
-      <a href="#" class="btn btn-default">Read More</a>
-    </div>
-    <div class="col-sm-6 col-md-3">
-      <h3><a href="#">Test colums</a></h3>
-      <p>Een test stukje van een site over bootstrap enzo dat soort dingen etc</p>
-      <a href="#" class="btn btn-default">Read More</a>
-    </div>
-  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
 </div>
--->
+</div>
 
 <!--Test met images-->
 <div class="container">
 	<div class="row">
-		<div class="col-sm-12 col-md-6 col-lg-3">
+		<div class="col-xs-12 col-sm-6 col-md-3">
 			<div class="thumbnail">
-			<img src={% static 'wedding/images/De_Zwarte_Boer_Leuvenum.png' %} alt="...">
+			<img src={% static 'wedding/images/De_Zwarte_Boer_Leuvenum.jpg' %} alt="...">
 				<div class="caption">
 					<h3>De Zwarte Boer</h3>
 					<p>In het pittoreske Leuvenum ligt midden in de bossen het kleinste 4 sterren hotel van Nederland.</p>
@@ -74,11 +63,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-12 col-md-6 col-lg-3">
+		<div class="col-xs-12 col-sm-6 col-md-3">
 			<div class="thumbnail">
 			<img src="http://www.letsgodigital.org/images/producten/340/specs/canon_eos_10d_front.jpg" alt="...">
 				<div class="caption">
-					<h3>Foto's op het feest</h3>
+					<h3>Foto's</h3>
 					<p>We zouden het leuk vinden als zoveel mogelijk mensen fotos maken. Neem je camera dus mee!</p>
 					<div class='text-center'>
 					<p><a href="location" class="btn btn-primary" role="button" btn-pull-right>Meer info</a></p>
@@ -86,7 +75,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-12 col-md-6 col-lg-3">
+		<div class="col-xs-12 col-sm-6 col-md-3">
 			<div class="thumbnail">
 			<img src="http://cdn.kveller.com/blog/wp-content/uploads/2011/11/Hanukkah-presents-300x200.jpg" alt="...">
 				<div class="caption">
@@ -98,7 +87,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-12 col-md-6 col-lg-3">
+		<div class="col-xs-12 col-sm-6 col-md-3">
 			<div class="thumbnail">
 			<img src="http://www.kontaktderkontinenten.nl/Images/Foto_kamers/hotelkamer-210_200x300_2910.aspx" alt="...">
 				<div class="caption">

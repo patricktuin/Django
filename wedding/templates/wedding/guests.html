@@ -5,19 +5,23 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'wedding/style.css' %}">
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script type="text/javascript" src="{% static 'javascript/jquery-1.11.0.min.js' %}"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <html>
 <body>
 <!--Navigation-->
 {% include "wedding/navbar.html" %}
 <div class='container'>
+	<div class="page-header">
+		<h1>Gastenlijst <small>voorbeeld tekst</small></h1>
+	</div>
 	<div class='row'>
 		<div class='col-sm-4'>
-			<h1>Gasten</h1>
+			<p>Klik op je naam om je aan of af te melden</p>
 			<table class="table table-striped">
-			{% for party in party_list %}
+			{% for guest in guest_list %}
 				<tr>
-					<td><a href="{{party.id }}"> {{ party.party_name }} </a></td>
+					<td><a href="{{guest.id }}"> {{ guest.party_name }} </a></td>
 				</tr>
 			{% endfor %}
 			</table>

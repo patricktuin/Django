@@ -7,20 +7,83 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>De Bruiloft</title>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script type="text/javascript" src="{% static 'javascript/jquery-1.11.0.min.js' %}"></script>
+	<script type="text/javascript" src={% static 'javascript/jquery-1.11.0.min.js' %}></script>
 	<!-- Wedding stylesheet -->
 	<link rel="stylesheet" type="text/css" href="{% static 'wedding/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'wedding/location.css' %}" />
 </head>
 <body>
+
+
 
 <!--Navigation-->
 {% include "wedding/navbar.html" %}
 <div class="container">
-	location
+	<div class="page-header">
+		<h1>De Zwarte Boer <small>Het decor van onze bruiloft</small></h1>
+	</div>
+
+	<!--Jumbotron-->
+<div class="container">
+  <div class="row">
+  	<div class='col-md-6'>
+	  	<div class='thumbnail'>
+	  		<img src='http://upload.wikimedia.org/wikipedia/commons/b/b7/De_Zwarte_Boer_Leuvenum.jpg' >
+			<h3>Boutique Hotel-Restaurant De Zwarte Boer</h3>
+			<p>Het decor van onze bruiloft is een van de kleinste 4 sterren hotels van Nederland.</p>
+			<p>De geschiedenis van De Zwarte Boer gaat terug tot het jaar 1600. Gelegen aan de oude Hessenwegen heeft De Zwarte Boer zich reeds 408 jaar mogen verheugen op het verwelkomen van koetsiers van diligences en handelsreizigers. Nu verwelkomen wij jullie!</p>
+			<p>Bij binnenkomst proeft u direct de roemrijke geschiedenis. De oude togen, antieke kroonluchters, haard, kasten, spanten -en vloeren doen u 400 jaar terug gaan in de tijd.</p>
+			<p>De Zwarte Boer is gelegen op het schitterende Landgoed Leuvenum. De prachtige natuur nodigt uit tot wandelen en fietsen. Onze restaurants bieden voor iedere gelegenheid de juiste mogelijkheden.</p>
+		</div>
+	</div>
+	<div class='col-md-6'>
+		<div class='thumbnail'>
+			<div class="page-header">
+				<h3>Routebeschrijving naar De Zwarte Boer</h3>
+			</div>
+			<div class="Flexible-container">
+				<!-- Responsive iFrame voor Google Maps-->
+			    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d78032.59034915632!2d5.688825469652762!3d52.32474013213571!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7cb510f7e0deb%3A0x8bc9f63203efa036!2sDe+Zwarte+Boer!5e0!3m2!1snl!2snl!4v1399327091331" width="600" height="450" frameborder="0" style="border:0"></iframe>
+	    	</div>
+	    </div>
+	</div>
+  </div>
+</div>
+
+<div class='container'>
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
 </div>
 </body>
 {% bootstrap_javascript %}

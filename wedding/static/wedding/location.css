@@ -1,0 +1,32 @@
+/* Flexible iFrame */
+
+.Flexible-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.Flexible-container iframe,   
+.Flexible-container object,  
+.Flexible-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.jumbotron{
+    margin-bottom: 0px;
+    color: white;
+    height:400px;
+   # background-image: url('images/de_zwarte_boer.jpg');
+    background-size:1200px 600px;
+    background-position: 0px;
+    border-style: solid;
+    border-width:1px;
+    border-color: lightgrey;
+    border-style: none;
+}
