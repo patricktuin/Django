@@ -12,8 +12,13 @@ body{
 	padding-top: 70px;
 }
 
+.thumbnail{
+  border-style: n
+}
+
 .row{
-	margin-bottom: 30px;
+	margin-bottom: 0px;
+  margin-top: 30px;
 }
 
 .table-striped{
@@ -24,7 +29,7 @@ body{
 	text-decoration: none;
 }
 
-.jumbotron{
+.carousel-example-generic{
   	margin-bottom: 0px;
   	color: white;
   	background-image: url('images/champagne.jpg');
@@ -34,15 +39,16 @@ body{
   	border-style: solid;
   	border-width:1px;
   	border-color: lightgrey;
+
 }
 
-.jumbotron h1{
-	font-size:50px !important;
+.carousel-example-generic h1{
+	  font-size:90px !important;
   	text-shadow: grey 1px 1px 5px;
-  	color:black !important;
+  	color:white !important;
 }
 
-.jumbotron p{
+.carousel-example-generic p{
 
   	text-shadow: grey 1px 1px 5px;
   	color:black;
