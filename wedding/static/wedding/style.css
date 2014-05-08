@@ -13,7 +13,7 @@ body{
 }
 
 .thumbnail{
-  border-style: n
+  border-style: none;
 }
 
 .row{
