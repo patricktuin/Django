@@ -20,6 +20,7 @@
 			<p>Klik op je naam om je aan of af te melden</p>
 			<table class="table table-striped">
 			{% for guest in guest_list %}
+			{{ guest.id }}
 				<tr>
 					<td><a href="{{guest.id }}"> {{ guest.party_name }} </a></td>
 				</tr>

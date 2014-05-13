@@ -10,6 +10,9 @@ class IndexView(generic.ListView):
     model = Invitee
     template_name = 'wedding/index.html'
 
+class DetailView(generic.DetailView):
+    model = Invitee
+    template_name = 'wedding/detail.html'
 
 class LocationView(generic.ListView):
     model = Invitee
@@ -41,13 +44,6 @@ class GuestsView(generic.ListView):
         return Invitee.objects.all().order_by('-party_name')[:5]
 
 
-class DetailView(generic.DetailView):
-    template_name = 'wedding/detail.html'
-    context_object_name = 'guest_list'
-
-    def get_queryset(self):
-        """Return the guests names"""
-        return Invitee.objects.all().order_by('-party_name')[:5]
 
 
 

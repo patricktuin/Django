@@ -1,31 +1,43 @@
 {% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'wedding/style.css' %}" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% load bootstrap3 %}
+{% bootstrap_css %}
+<html> 
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'wedding/style.css' %}">
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script type="text/javascript" src="{% static 'javascript/jquery-1.11.0.min.js' %}"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class='container'>
+<!--Navigation-->
+{% include "wedding/navbar.html" %}
+	<div class="pageheader">
+		<h1>{{ invitee.party_name }} </h1>
+	</div>
+	<div class="row">
+		<div class="col-sm-4">
+			{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+			{% csrf_token %}
+			<table class="table table-striped">
+				<th>Guest id</th>
+				<th>Guest</th>
+				<th>Attend</th>
+				{% for guests in invitee.invitee_extra_set.all %}
+				<tr>
+					<td><label for="attend{{ forloop.counter }}"> {{ guests.id }}</label></td>
+					<td><label for="attend{{ forloop.counter }}"> {{ guests.guest }}</label></td>
+					<td><label for="attend{{ forloop.counter }}"> {{ guests.attend }}</label></td>
+				<tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+	
 
-<div id='container'>
 
-	<h1>name: {{ invitee.party_name }} id: {{ invitee.id }} </h1>
-
-	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-
-	<form action="{% url 'wedding:vote' invitee_id=invitee.id %}" method="post">
-
-	{% csrf_token %}
-	<table>
-		<th>Guest id</th>
-		<th>Guest</th>
-		<th>Attend</th>
-	{% for guests in invitee.invitee_extra_set.all %}
-		<tr>
-			<td><label for="attend{{ forloop.counter }}"> {{ guests.id }}</label></td>
-			<td><label for="attend{{ forloop.counter }}"> {{ guests.guest }}</label></td>
-			<td><input type="radio" name="attend" id="attend{{ forloop.counter }}" value="{{ guests.id }}"/></td>
-		<tr>
-	{% endfor %}
-	</table>
-
-
-	<input type="submit" value="Update gegevens" />
-	</form>
 
 </div>
+{% bootstrap_javascript %}
+</body>
+</html>
