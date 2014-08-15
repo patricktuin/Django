@@ -12,9 +12,9 @@ body{
 	padding-top: 70px;
 }
 
-.thumbnail{
+/*.thumbnail{
   border-style: none;
-}
+}*/
 
 .row{
 	margin-bottom: 0px;
@@ -56,6 +56,39 @@ body{
 
 }
 
-.kadotips{
-  background-image: url('http://www.giftsonline4u.com/blog/wp-content/uploads/2012/12/wedding-registry.jpg');  
+body {
+  position: relative;
+  z-index: 1;
+  background-color: #663300;
 }
+
+body:before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;  
+  opacity: .2; 
+  z-index: -1;
+
+  background-image: url('http://newwallpaperswide.com/wp-content/uploads/2014/05/Central-Park-Autumn.jpg');
+
+}
+
+h1{
+  color: black;
+}
+
+.navbar{
+  background-color: transparent;
+}
+
+.thumbnail{
+  background-color: #663300;
+}
+
+.caption{
+  color: #FF9933 !important;
+}
+

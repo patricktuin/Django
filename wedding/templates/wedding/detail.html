@@ -1,3 +1,4 @@
+
 {% load staticfiles %}
 {% load bootstrap3 %}
 {% bootstrap_css %}
@@ -23,21 +24,36 @@
 				<th>Guest id</th>
 				<th>Guest</th>
 				<th>Attend</th>
+				<th>Test</th>
 				{% for guests in invitee.invitee_extra_set.all %}
 				<tr>
 					<td><label for="attend{{ forloop.counter }}"> {{ guests.id }}</label></td>
 					<td><label for="attend{{ forloop.counter }}"> {{ guests.guest }}</label></td>
 					<td><label for="attend{{ forloop.counter }}"> {{ guests.attend }}</label></td>
+
+					<td>	<form action="{% url 'wedding:vote' invitee.id %}" method="post">
+						{% csrf_token %}
+						    <input type="checkbox" name="choice" id="choice" value="{{ guests.id }}" />
+						    <label for="choice"> {{ guests.test }} </label><br />
+
+						<input type="submit" value="Vote" />
+						</form></td>
 				<tr>
-				{% endfor %}
+			{% endfor %}
 			</table>
 		</div>
 	</div>
-	
+
+
+{{ form.as_p }}
+
+
 
 
 
 </div>
 {% bootstrap_javascript %}
+
+
 </body>
 </html>

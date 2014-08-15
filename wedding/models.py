@@ -12,5 +12,6 @@ class Invitee_extra(models.Model):
     invitee = models.ForeignKey(Invitee)
     guest = models.CharField(max_length=50)
     attend = models.IntegerField(default=0)
+    test = models.CharField(max_length=50)
     def __unicode__(self):  # Python 3: def __str__(self):
         return self.invitee

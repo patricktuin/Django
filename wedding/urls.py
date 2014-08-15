@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import patterns, include, url
 
 from wedding import views
 
@@ -10,5 +10,6 @@ urlpatterns = patterns('',
     url(r'^overnachten/$', views.OvernachtenView.as_view(), name='overnachten'),
     url(r'^kadotips/$', views.KadotipsView.as_view(), name='kadotips'),
     url(r'^guests/$', views.GuestsView.as_view(), name='guests'),
-	url(r'^guests/(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'),
+    url(r'^guests/(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'),
+	url(r'^(?P<guest_id>\d+)/vote/$', views.vote, name='vote'),
 )

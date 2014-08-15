@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.views import generic
@@ -43,7 +43,28 @@ class GuestsView(generic.ListView):
         """Return the guests names"""
         return Invitee.objects.all().order_by('-party_name')[:5]
 
+def vote(request, guest_id):
+    p = get_object_or_404(Invitee, pk=guest_id)
+    try:
+        selected_choice = p.invitee_extra_set.get(pk=request.POST['choice'])
+    except (KeyError, Invitee.DoesNotExist):
+        # Redisplay the poll voting form.
+        return render(request, 'wedding/detail.html', {
+            'poll': p,
+            'error_message': "You didn't select a attend.",
+        })
+    else:
+
+        if selected_choice.test == '0':
+            selected_choice.test = selected_choice
+            selected_choice.save()
+        else:
+            selected_choice.test = 'pollo'
+            selected_choice.save()
 
 
-
+        # Always return an HttpResponseRedirect after successfully dealing
+        # with POST data. This prevents data from being posted twice if a
+        # user hits the Back button.
+        return HttpResponseRedirect(reverse('wedding:detail', args=(p.id,)))
 
