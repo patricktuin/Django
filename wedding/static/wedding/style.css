@@ -8,14 +8,6 @@
 }
 
 
-body{
-	padding-top: 70px;
-}
-
-/*.thumbnail{
-  border-style: none;
-}*/
-
 .row{
 	margin-bottom: 0px;
   margin-top: 30px;
@@ -57,6 +49,8 @@ body{
 }
 
 body {
+  padding-top: 90px;
+  padding-bottom: 70px;
   position: relative;
   z-index: 1;
   background-color: #663300;
@@ -87,6 +81,8 @@ h1 small{
 .navbar{
   background-color: #A45512;
   opacity: 0.9;
+  border-color: #E39D18;
+
 }
 
 .dropdown-toggle{
@@ -105,6 +101,27 @@ h1 small{
   color:#E9D2A2 !important;
 }
 
+/*a:hover{
+
+  font-size: 20px;
+}*/
+
+.dropdown-menu{
+  background-color: #A45512 !important;
+}
+
+.dropdown-menu a:hover{
+  color: #A45512 !important;
+}
+
+.dropdown-toggle{
+  background-color: #A45512 !important;
+}
+
+.dropdown-menu a:hover{
+  background-color: #E9D2A2 !important;
+}
+
 p{
   color:#E9D2A2;
 }
@@ -112,16 +129,39 @@ p{
 .thumbnail{
   border-color: #E39D18;
   background-color: transparent;
-  height: 350px;
+
+}
+
+.table{
+  background-color: red;
 }
 
 
-.dropdown-menu{
-  background-color: #A45512; !important;
+
+/*Panels*/
+
+.panel {
+    background: none;
+    color: #E9D2A2;
+    border-color: #E9D2A2;
 }
 
-a:hover{
-  color:black !important;
+.panel-title{
+  font-size: 20px !important;
+}
+
+.panel-heading{
+  background-color: #A45512 !important;
+  color: #E9D2A2 !important;
+}
+
+.panel-body{
+  font-size: 18px !important;
+}
+
+
+.page-header{
+  border-color: #E39D18 !important;
 }
 
 
@@ -137,3 +177,10 @@ img{
   opacity: 0.8;
 
 }
+
+.thumbnail img{
+
+}
+
+
+
