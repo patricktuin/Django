@@ -83,14 +83,14 @@ h1 small{
 }
 
 .navbar{
-  background-color: #A45512;
+  background-color: $navbar-background-color;
   opacity: 0.9;
   border-color: #E39D18;
 
 }
 
 .dropdown-toggle{
-  background-color: #A45512;
+  background-color: $navbar-background-color;
 }
 
 .thumbnail{
@@ -111,15 +111,15 @@ h1 small{
 }*/
 
 .dropdown-menu{
-  background-color: #A45512 !important;
+  background-color: $navbar-background-color !important;
 }
 
 .dropdown-menu a:hover{
-  color: #A45512 !important;
+  color: $navbar-background-color !important;
 }
 
 .dropdown-toggle{
-  background-color: #A45512 !important;
+  background-color: $navbar-background-color !important;
 }
 
 .dropdown-menu a:hover{
@@ -155,7 +155,7 @@ p{
 }
 
 .panel-heading{
-  background-color: #A45512 !important;
+  background-color: $navbar-background-color !important;
   color: #E9D2A2 !important;
 }
 
