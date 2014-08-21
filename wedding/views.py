@@ -30,6 +30,10 @@ class OvernachtenView(generic.ListView):
     model = Invitee
     template_name = 'wedding/overnachten.html'
 
+class InfoView(generic.ListView):
+    model = Invitee
+    template_name = 'wedding/info.html'
+
 class KadotipsView(generic.ListView):
     model = Invitee
     template_name = 'wedding/kadotips.html'

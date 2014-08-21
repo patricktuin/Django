@@ -5,6 +5,7 @@ from wedding import views
 urlpatterns = patterns('',
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^location/$', views.LocationView.as_view(), name='location'),
+    url(r'^info/$', views.InfoView.as_view(), name='info'),
     url(r'^ceremoniemeester/$', views.CeremoniemeesterView.as_view(), name='ceremoniemeester'),
     url(r'^fotos/$', views.FotosView.as_view(), name='fotos'),
     url(r'^overnachten/$', views.OvernachtenView.as_view(), name='overnachten'),

@@ -64,7 +64,11 @@ h1 small{
   	a {
   		color: $h-color !important;
 	}
-
+    
+    a:hover{
+        text-shadow: $h-color-shadow !important;
+    }
+            
 }
 
 
@@ -98,7 +102,7 @@ p{
 }
 
 .thumbnail{
-  border-color: #E39D18;
+  border-color: $h-color;
   background-color: transparent;
 
 }
@@ -133,7 +137,7 @@ p{
 }
 
 .carousel-inner{
-  border-color: #E39D18 !important;
+  border-color: $h-color !important;
   border: 1px solid;
   border-radius: 5px !important;
   box-shadow: $box-shadow;
