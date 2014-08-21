@@ -1,16 +1,6 @@
-{% load staticfiles %}
-{% load bootstrap3 %}
-{% bootstrap_css %}
-<head>
-	<link rel="stylesheet" type="text/css" href="{% static 'wedding/style.css' %}">
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script type="text/javascript" src="{% static 'javascript/jquery-1.11.0.min.js' %}"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<html>
-<body>
-<!--Navigation-->
-{% include "wedding/navbar.html" %}
+{% extends "wedding/main.html" %}
+{% block content %}
+
 <div class='container'>
 	<div class="page-header">
 		<h1>Gastenlijst <small>voorbeeld tekst</small></h1>
@@ -29,6 +19,5 @@
 		</div>
 	</div>
 </div>
-{% bootstrap_javascript %}
-</body>
-</html>
+
+{% endblock %}

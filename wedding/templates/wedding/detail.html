@@ -1,15 +1,6 @@
+{% extends "wedding/main.html" %}
+{% block content %}
 
-{% load staticfiles %}
-{% load bootstrap3 %}
-{% bootstrap_css %}
-<html> 
-<head>
-	<link rel="stylesheet" type="text/css" href="{% static 'wedding/style.css' %}">
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script type="text/javascript" src="{% static 'javascript/jquery-1.11.0.min.js' %}"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
 <div class='container'>
 <!--Navigation-->
 {% include "wedding/navbar.html" %}
@@ -46,14 +37,6 @@
 
 
 {{ form.as_p }}
-
-
-
-
-
 </div>
-{% bootstrap_javascript %}
 
-
-</body>
-</html>
+{% endblock %}

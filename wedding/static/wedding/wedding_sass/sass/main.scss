@@ -25,32 +25,6 @@
 	text-decoration: none;
 }
 
-.jumbotron{
-  	margin-bottom: 0px;
-  	color: white;
-  	background-image: url('images/champagne.jpg');
-    background-color: transparent;
-  	background-size:1200px 600px;
-  	background-position: 0px;
-  	border-style: solid;
-  	border-width:1px;
-  	border-color: lightgrey;
-
-}
-
-.jumbotron h1{
-	font-size:90px !important;
-  	text-shadow: gold 5px 5px 50px;
-  	color:black !important;
-}
-
-.jumbotron p{
-
-  	text-shadow: black 5px 5px 50px;
-  	color:gold;
-  	font-size: 40px !important;
-
-}
 
 body {
   padding-top: 90px;
@@ -67,7 +41,7 @@ body:before {
   left: 0;
   width: 100%; 
   height: 100%;  
-  opacity: .2; 
+  opacity: .5; 
   z-index: -1;
 
   background-image: url('http://newwallpaperswide.com/wp-content/uploads/2014/05/Central-Park-Autumn.jpg');
@@ -79,55 +53,48 @@ h1, h2, h3, h4{
 }
 
 h1 small{
-  color: #E9D2A2;
+  color: $small-letters;
 }
 
 .navbar{
   background-color: $navbar-background-color;
-  opacity: 0.9;
-  border-color: #E39D18;
+  opacity: 1;
+  border: none;
+
+  	a {
+  		color: $h-color !important;
+	}
 
 }
 
+
+.dropdown-menu{
+  background-color: $navbar-background-color !important;
+
+	a:hover {
+  		color: $navbar-background-color !important;
+	}
+}
+
 .dropdown-toggle{
-  background-color: $navbar-background-color;
+  background-color: transparent !important;
 }
 
 .thumbnail{
   background-color: #663300;
+  box-shadow: $box-shadow;
 }
 
 .caption{
   color: #FF9933 !important;
 }
 
-.navbar a{
-  color:#E9D2A2 !important;
-}
 
-/*a:hover{
 
-  font-size: 20px;
-}*/
 
-.dropdown-menu{
-  background-color: $navbar-background-color !important;
-}
-
-.dropdown-menu a:hover{
-  color: $navbar-background-color !important;
-}
-
-.dropdown-toggle{
-  background-color: $navbar-background-color !important;
-}
-
-.dropdown-menu a:hover{
-  background-color: $navbar-background-color !important;
-}
 
 p{
-  color:#E9D2A2;
+  color:$small-letters;
 }
 
 .thumbnail{
@@ -137,7 +104,8 @@ p{
 }
 
 .table{
-  background-color: red;
+  background-color: none;
+  color: $h-color;
 }
 
 
@@ -146,43 +114,46 @@ p{
 
 .panel {
     background: none;
-    color: #E9D2A2;
-    border-color: #E9D2A2;
-}
+    border-color: $h-color;
+    box-shadow: $box-shadow;
+	
+	.panel-heading {
+  		background-color: $navbar-background-color !important;
+  		color: $small-letters !important;
+	}
 
-.panel-title{
-  font-size: 20px !important;
-}
+	.panel-title{
 
-.panel-heading{
-  background-color: $navbar-background-color !important;
-  color: #E9D2A2 !important;
+  		color: $h-color;
+	}
 }
-
-.panel-body{
-  font-size: 18px !important;
-}
-
 
 .page-header{
-  border-color: #E39D18 !important;
+  border-color: $h-color !important;
 }
-
-
 
 .carousel-inner{
   border-color: #E39D18 !important;
   border: 1px solid;
   border-radius: 5px !important;
-/*  box-shadow: 0px 0px 10px 5px rgba(186,113,35,0.75);*/
+  box-shadow: $box-shadow;
+
+  	@media all and (max-width: 500px) {
+		.carousel-caption h2{
+			font-size: 18px !important;
+		}
+	}
 }
+
+
+
+
+
+
+
 
 img{
-  opacity: 0.8;
-
-}
-
-.thumbnail img{
+  opacity: 0.9;
 
 }
 
