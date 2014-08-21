@@ -1,31 +1,5 @@
-{% load staticfiles %}
-{% load bootstrap3 %}
-{% bootstrap_css %}
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>De Bruiloft</title>
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script type="text/javascript" src={% static 'javascript/jquery-1.11.0.min.js' %}></script>
-	<!-- Wedding stylesheet -->
-	<link rel="stylesheet" type="text/css" href="{% static 'wedding/style.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'wedding/location.css' %}" />
-</head>
-<body>
-
-
-
-<!--Navigation-->
-{% include "wedding/navbar.html" %}
-<div class="container">
-	<div class="page-header">
-		<h1>De Zwarte Boer <small>Het decor van onze bruiloft</small></h1>
-	</div>
+{% extends "wedding/main.html" %}
+{% block content %}
 
 	<!--Jumbotron-->
 <div class="container">
@@ -80,9 +54,4 @@
 </div>
  -->
 
-
-
-
-</div>
-</body>
-{% bootstrap_javascript %}
+{% endblock %}
