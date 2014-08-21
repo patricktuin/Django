@@ -1,3 +1,7 @@
+@import 'ceremoniemeester';
+@import 'location';
+@import 'colors';
+
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../assets/glyphicons-halflings-regular.eot');
@@ -10,7 +14,7 @@
 
 .row{
 	margin-bottom: 0px;
-  margin-top: 30px;
+  	margin-top: 30px;
 }
 
 .table-striped{
@@ -35,7 +39,7 @@
 }
 
 .jumbotron h1{
-	  font-size:90px !important;
+	font-size:90px !important;
   	text-shadow: gold 5px 5px 50px;
   	color:black !important;
 }
@@ -46,7 +50,14 @@
   	color:gold;
   	font-size: 40px !important;
 
+}
 
+body {
+  padding-top: 90px;
+  padding-bottom: 70px;
+  position: relative;
+  z-index: 1;
+  background-color: $background-color;
 }
 
 body:before {
@@ -64,7 +75,7 @@ body:before {
 }
 
 h1, h2, h3, h4{
-  color: #E39D18;
+  color: $h-color;
 }
 
 h1 small{
