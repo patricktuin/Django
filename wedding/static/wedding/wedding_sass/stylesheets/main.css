@@ -183,15 +183,21 @@ img {
   border-color: #edd35d;
 }
 
-@media all and (min-width: 64em) {
+@media screen and (min-width: 992px) and (max-width: 1199px) {
   /* line 168, ../sass/main.scss */
   .thumb-overnachten {
     height: 550px;
   }
 }
+@media screen and (min-width: 1200px) {
+  /* line 168, ../sass/main.scss */
+  .thumb-overnachten {
+    height: 600px;
+  }
+}
 
-@media all and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 174, ../sass/main.scss */
+@media screen and (min-width: 40.063em) and (max-width: 64em) {
+  /* line 178, ../sass/main.scss */
   .thumb-index {
     height: 400px;
   }
