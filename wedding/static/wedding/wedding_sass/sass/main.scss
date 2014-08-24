@@ -104,7 +104,6 @@ p{
 .thumbnail{
   border-color: $h-color;
   background-color: transparent;
-
 }
 
 .table{
@@ -150,16 +149,30 @@ p{
 }
 
 
-
-
-
-
-
-
 img{
   opacity: 0.9;
 
 }
 
+.btn{
+  background-color: $button-background;
+  border-color: $h-color; 
+} 
 
+.btn-primary:hover{
+  background-color: $h-color;
+  color: $button-background;
+  border-color: $h-color;
+}
 
+.thumb-overnachten{
+  @media all and (min-width: 64em) {
+    height:550px;
+  }
+}
+
+.thumb-index{
+  @media all and (min-width: 40.063em) and (max-width: 64em) {
+    height:400px;
+  }
+}
