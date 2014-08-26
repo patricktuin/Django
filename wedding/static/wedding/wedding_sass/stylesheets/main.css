@@ -19,28 +19,34 @@
   height: 100%;
 }
 
+/* line 2, ../sass/_guests.scss */
+.table-guests a {
+  color: #edd35d;
+  text-decoration: none;
+}
+
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url("../assets/glyphicons-halflings-regular.eot");
-  src: url("../assets/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../assets/glyphicons-halflings-regular.woff") format("woff"), url("../assets/glyphicons-halflings-regular.ttf") format("truetype"), url("../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+  src: url("../assets/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype");
 }
-/* line 15, ../sass/main.scss */
+/* line 16, ../sass/main.scss */
 .row {
   margin-bottom: 0px;
   margin-top: 30px;
 }
 
-/* line 20, ../sass/main.scss */
+/* line 21, ../sass/main.scss */
 .table-striped {
   margin-top: 25px;
 }
 
-/* line 24, ../sass/main.scss */
+/* line 25, ../sass/main.scss */
 .table-striped:hover {
   text-decoration: none;
 }
 
-/* line 29, ../sass/main.scss */
+/* line 30, ../sass/main.scss */
 body {
   padding-top: 90px;
   padding-bottom: 70px;
@@ -49,7 +55,7 @@ body {
   background-color: #663300;
 }
 
-/* line 37, ../sass/main.scss */
+/* line 38, ../sass/main.scss */
 body:before {
   content: "";
   position: absolute;
@@ -62,97 +68,97 @@ body:before {
   background-image: url("http://newwallpaperswide.com/wp-content/uploads/2014/05/Central-Park-Autumn.jpg");
 }
 
-/* line 51, ../sass/main.scss */
+/* line 52, ../sass/main.scss */
 h1, h2, h3, h4 {
   color: #edd35d;
   /*  text-shadow:0px 0px 50px #FFFF00;*/
 }
 
-/* line 56, ../sass/main.scss */
+/* line 57, ../sass/main.scss */
 h1 small {
   color: #edd35d;
 }
 
-/* line 60, ../sass/main.scss */
+/* line 61, ../sass/main.scss */
 .navbar {
   background-color: rgba(72, 51, 3, 0.9);
   opacity: 1;
   border: none;
 }
-/* line 65, ../sass/main.scss */
+/* line 66, ../sass/main.scss */
 .navbar a {
   color: #edd35d !important;
 }
-/* line 69, ../sass/main.scss */
+/* line 70, ../sass/main.scss */
 .navbar a:hover {
   text-shadow: 0px 0px 10px #f5ff00 !important;
 }
 
-/* line 76, ../sass/main.scss */
+/* line 77, ../sass/main.scss */
 .dropdown-menu {
   background-color: rgba(72, 51, 3, 0.9) !important;
 }
-/* line 79, ../sass/main.scss */
+/* line 80, ../sass/main.scss */
 .dropdown-menu a:hover {
   color: rgba(72, 51, 3, 0.9) !important;
 }
 
-/* line 84, ../sass/main.scss */
+/* line 85, ../sass/main.scss */
 .dropdown-toggle {
   background-color: transparent !important;
 }
 
-/* line 88, ../sass/main.scss */
+/* line 89, ../sass/main.scss */
 .thumbnail {
   background-color: #663300;
   box-shadow: 0px 0px 10px 5px rgba(186, 113, 35, 0.75);
 }
 
-/* line 93, ../sass/main.scss */
+/* line 94, ../sass/main.scss */
 .caption {
   color: #FF9933 !important;
 }
 
-/* line 101, ../sass/main.scss */
+/* line 102, ../sass/main.scss */
 p {
   color: #edd35d;
 }
 
-/* line 105, ../sass/main.scss */
+/* line 106, ../sass/main.scss */
 .thumbnail {
   border-color: #edd35d;
   background-color: transparent;
 }
 
-/* line 110, ../sass/main.scss */
+/* line 111, ../sass/main.scss */
 .table {
   background-color: none;
   color: #edd35d;
 }
 
 /*Panels*/
-/* line 119, ../sass/main.scss */
+/* line 120, ../sass/main.scss */
 .panel {
   background: none;
   border-color: #edd35d;
   box-shadow: 0px 0px 10px 5px rgba(186, 113, 35, 0.75);
 }
-/* line 124, ../sass/main.scss */
+/* line 125, ../sass/main.scss */
 .panel .panel-heading {
   background-color: rgba(72, 51, 3, 0.9) !important;
   color: #edd35d !important;
 }
-/* line 129, ../sass/main.scss */
+/* line 130, ../sass/main.scss */
 .panel .panel-title {
   color: #edd35d;
 }
 
-/* line 135, ../sass/main.scss */
+/* line 136, ../sass/main.scss */
 .page-header {
   border-color: #edd35d !important;
 }
 
-/* line 139, ../sass/main.scss */
+/* line 140, ../sass/main.scss */
 .carousel-inner {
   border-color: #edd35d !important;
   border: 1px solid;
@@ -160,24 +166,24 @@ p {
   box-shadow: 0px 0px 10px 5px rgba(186, 113, 35, 0.75);
 }
 @media all and (max-width: 500px) {
-  /* line 146, ../sass/main.scss */
+  /* line 147, ../sass/main.scss */
   .carousel-inner .carousel-caption h2 {
     font-size: 18px !important;
   }
 }
 
-/* line 153, ../sass/main.scss */
+/* line 154, ../sass/main.scss */
 img {
   opacity: 0.9;
 }
 
-/* line 158, ../sass/main.scss */
+/* line 159, ../sass/main.scss */
 .btn {
   background-color: #734F02;
   border-color: #edd35d;
 }
 
-/* line 163, ../sass/main.scss */
+/* line 164, ../sass/main.scss */
 .btn-primary:hover {
   background-color: #edd35d;
   color: #734F02;
@@ -185,37 +191,42 @@ img {
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  /* line 169, ../sass/main.scss */
+  /* line 170, ../sass/main.scss */
   .thumb-overnachten {
     height: 550px;
   }
 }
 @media screen and (min-width: 1200px) {
-  /* line 169, ../sass/main.scss */
+  /* line 170, ../sass/main.scss */
   .thumb-overnachten {
     height: 600px;
   }
 }
 
-@media screen and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 179, ../sass/main.scss */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  /* line 180, ../sass/main.scss */
   .thumb-index {
-    height: 400px;
+    height: 350px;
   }
 }
 
-/* line 187, ../sass/main.scss */
+/* line 188, ../sass/main.scss */
 .thumb-index {
   position: relative;
 }
 
-/* line 191, ../sass/main.scss */
+/* line 192, ../sass/main.scss */
 .thumb-index:hover {
-  color: red !important;
-  background-color: #663300;
+  background-color: #edd35d;
+  opacity: 0.8;
+}
+/* line 195, ../sass/main.scss */
+.thumb-index:hover p, .thumb-index:hover h3 {
+  color: #663300;
+  opacity: 1.0;
 }
 
-/* line 197, ../sass/main.scss */
+/* line 203, ../sass/main.scss */
 a.thumb-link {
   position: absolute;
   width: 100%;

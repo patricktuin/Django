@@ -2,8 +2,6 @@
 {% block content %}
 
 <div class='container'>
-<!--Navigation-->
-{% include "wedding/navbar.html" %}
 	<div class="pageheader">
 		<h1>{{ invitee.party_name }} </h1>
 	</div>
@@ -11,24 +9,24 @@
 		<div class="col-sm-4">
 			{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 			{% csrf_token %}
-			<table class="table table-striped">
+			<table class="table table-responsive">
 				<th>Guest id</th>
 				<th>Guest</th>
 				<th>Attend</th>
-				<th>Test</th>
+				<th></th>
 				{% for guests in invitee.invitee_extra_set.all %}
 				<tr>
 					<td><label for="attend{{ forloop.counter }}"> {{ guests.id }}</label></td>
 					<td><label for="attend{{ forloop.counter }}"> {{ guests.guest }}</label></td>
-					<td><label for="attend{{ forloop.counter }}"> {{ guests.attend }}</label></td>
-
-					<td>	<form action="{% url 'wedding:vote' invitee.id %}" method="post">
+					<td><label for="attend{{ forloop.counter }}"> {{ guests.test }}</label></td>
+					<td>	
+						<form action="{% url 'wedding:vote' invitee.id %}" method="post">
 						{% csrf_token %}
-						    <input type="checkbox" name="choice" id="choice" value="{{ guests.id }}" />
-						    <label for="choice"> {{ guests.test }} </label><br />
+						    <input type="submit" name="choice" id="choice" value="{{ guests.id }}" />
 
-						<input type="submit" value="Vote" />
-						</form></td>
+<!-- 							<input type="submit" name="choice" value="Vote"  /> -->
+						</form>
+					</td>
 				<tr>
 			{% endfor %}
 			</table>

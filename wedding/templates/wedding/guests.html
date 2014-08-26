@@ -3,21 +3,29 @@
 
 <div class='container'>
 	<div class="page-header">
-		<h1>Gastenlijst <small>voorbeeld tekst</small></h1>
+		<h1>Gastenlijst<small> {% now "D d M Y" %} 	</small></h1>
 	</div>
-	<div class='row'>
-		<div class='col-sm-4'>
-			<p>Klik op je naam om je aan of af te melden</p>
-			<table class="table table-striped">
-			{% for guest in guest_list %}
-			{{ guest.id }}
-				<tr>
-					<td><a href="{{guest.id }}"> {{ guest.party_name }} </a></td>
-				</tr>
-			{% endfor %}
-			</table>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Klik op je naam om je aan of af te melden</h3>
 		</div>
-	</div>
+		<div class="panel-body">
+<!-- 				<div class='col-sm-4'> -->
+
+					<table class="table table-responsive table-guests">
+					{% for guest in guest_list %}
+						<tr>
+							<td><a href="{{guest.id }}"> {{ guest.party_name }} </a></td>
+						</tr>
+					{% endfor %}
+					</table>
+				</div>
+
+
+
+			</div>
+		</div>
 </div>
+
 
 {% endblock %}

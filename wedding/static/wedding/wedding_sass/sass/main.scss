@@ -1,14 +1,15 @@
 @import 'ceremoniemeester';
 @import 'location';
 @import 'colors';
+@import 'guests';
 
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../assets/glyphicons-halflings-regular.eot');
   src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
-       url('../assets/glyphicons-halflings-regular.woff') format('woff'), 
-       url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), 
-       url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+       // url('../assets/glyphicons-halflings-regular.woff') format('woff'), 
+       // url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), 
+       // url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 
@@ -177,8 +178,8 @@ img{
 }
 
 .thumb-index{
-  @media screen and (min-width: 40.063em) and (max-width: 64em) {
-    height:400px;
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    height:350px;
   }
 }
 
@@ -189,8 +190,13 @@ img{
 }
  
 .thumb-index:hover{
-      color: red !important;
-      background-color: $background-color;
+  background-color: $h-color;
+  opacity: 0.8;
+      p, h3 {
+      color: $background-color;
+      opacity: 1.0;
+
+    }
 }
 
  

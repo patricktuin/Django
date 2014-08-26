@@ -43,9 +43,26 @@ class GuestsView(generic.ListView):
     template_name = 'wedding/guests.html'
     context_object_name = 'guest_list'
 
+
+
+
+
+
+    import datetime
+    today = datetime.date.today()
+    someday = datetime.date(2014, 10, 31)
+    diff = someday - today
+
+
+
+
+
+
     def get_queryset(self):
         """Return the guests names"""
         return Invitee.objects.all().order_by('-party_name')[:5]
+
+
 
 def vote(request, guest_id):
     p = get_object_or_404(Invitee, pk=guest_id)
@@ -59,16 +76,17 @@ def vote(request, guest_id):
         })
     else:
 
-        if selected_choice.test == '0':
-            selected_choice.test = selected_choice
-            selected_choice.save()
+        if selected_choice.test == 'Ik kom niet':
+            selected_choice.test = 'Ik kom'
+            selected_choice.save();
         else:
-            selected_choice.test = 'pollo'
-            selected_choice.save()
+            selected_choice.test = 'Ik kom niet'
+            selected_choice.save();
 
 
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('wedding:detail', args=(p.id,)))
+
 
